@@ -12,8 +12,8 @@ for VersionInfo in Manifest["versions"]:
         LauncherInfo = httpx.get(VersionInfo["url"]).json()
         JarUrl = LauncherInfo["downloads"]["server"]["url"]
         print("Downloading Jar file...")
-        JarContents = httpx.get(JarUrl).text
-        ServerJar = open("server.jar", "w")
+        JarContents = httpx.get(JarUrl).content
+        ServerJar = open("server.jar", "wb")
         ServerJar.write(JarContents)
         ServerJar.close()
         print("Jar file downloaded.")

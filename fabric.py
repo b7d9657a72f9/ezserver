@@ -8,8 +8,8 @@ FabricVersion = input()
 JarUrl = "https://meta.fabricmc.net/v2/versions/loader/" + MinecraftVersion + "/" + FabricVersion + "/1.1.0/server/jar"
 
 print("Downloading Jar file...")
-JarContents = httpx.get(JarUrl).text
-ServerJar = open("fabric.jar", "w")
+JarContents = httpx.get(JarUrl).content
+ServerJar = open("fabric.jar", "wb")
 ServerJar.write(JarContents)
 ServerJar.close()
 print("Jar file downloaded.")

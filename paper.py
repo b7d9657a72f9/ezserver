@@ -8,8 +8,8 @@ Manifest = httpx.get("https://qing762.is-a.dev/api/papermc").json()
 JarUrl = Manifest["versions"][Version]
 
 print("Downloading Jar file...")
-JarContents = httpx.get(JarUrl).text
-ServerJar = open("paper.jar", "w")
+JarContents = httpx.get(JarUrl).content
+ServerJar = open("paper.jar", "wb")
 ServerJar.write(JarContents)
 ServerJar.close()
 print("Jar file downloaded.")
