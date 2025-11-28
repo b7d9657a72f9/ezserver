@@ -1,15 +1,15 @@
 import httpx
 
 print("Minecraft version:")
-Version = input()
+MinecraftVersion = input()
+print("Fabric version:")
+FabricVersion = input()
 
-Manifest = httpx.get("https://qing762.is-a.dev/api/papermc").json()
-
-JarUrl = Manifest["versions"][Version]
+JarUrl = "https://meta.fabricmc.net/v2/versions/loader/" + MinecraftVersion + "/" + FabricVersion + "/1.1.0/server/jar"
 
 print("Downloading Jar file...")
 JarContents = httpx.get(JarUrl).text
-ServerJar = open("paper.jar", "w")
+ServerJar = open("fabric.jar", "w")
 ServerJar.write(JarContents)
 ServerJar.close()
 print("Jar file downloaded.")

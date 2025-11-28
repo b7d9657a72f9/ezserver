@@ -17,3 +17,6 @@ for VersionInfo in Manifest["versions"]:
         ServerJar.write(JarContents)
         ServerJar.close()
         print("Jar file downloaded.")
+        Eula = open("eula.txt", "w")
+        Eula.write("eula=true")
+        Eula.close()
