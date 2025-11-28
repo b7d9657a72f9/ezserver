@@ -20,3 +20,7 @@ for VersionInfo in Manifest["versions"]:
         Eula = open("eula.txt", "w")
         Eula.write("eula=true")
         Eula.close()
+        Run = open("run", "w")
+        Run.write("java -jar server.jar nogui")
+        Run.close()
+
