@@ -6,8 +6,10 @@ EzServer needs HTTPX to work.
 It can be installed by doing:  
 ```
 pip install httpx
+```
 
-# or
+or
 
+```
 pipx install httpx
 ```
